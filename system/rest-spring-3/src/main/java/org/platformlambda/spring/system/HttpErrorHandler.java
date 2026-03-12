@@ -23,7 +23,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.platformlambda.core.serializers.SimpleMapper;
 import org.platformlambda.core.serializers.SimpleXmlWriter;
 import org.platformlambda.core.util.Utility;
-import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.boot.webmvc.error.ErrorController;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,9 +37,9 @@ public class HttpErrorHandler implements ErrorController {
     private static final SimpleXmlWriter xmlWriter = new SimpleXmlWriter();
     private static final String ERROR_PATH = "/error";
     private static final String UTF8 = "utf-8";
-    private static final String ERROR_MESSAGE = "javax.servlet.error.message";
-    private static final String ERROR_EXCEPTION = "javax.servlet.error.exception";
-    private static final String STATUS_CODE = "javax.servlet.error.status_code";
+    private static final String ERROR_MESSAGE = "jakarta.servlet.error.message";
+    private static final String ERROR_EXCEPTION = "jakarta.servlet.error.exception";
+    private static final String STATUS_CODE = "jakarta.servlet.error.status_code";
     private static final String NOT_FOUND = "Not Found";
 
     private static final String TEMPLATE = "/errorPage.html";

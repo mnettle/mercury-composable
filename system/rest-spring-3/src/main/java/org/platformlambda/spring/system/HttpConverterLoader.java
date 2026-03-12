@@ -24,7 +24,7 @@ import org.platformlambda.spring.serializers.HttpConverterText;
 import org.platformlambda.spring.serializers.HttpConverterXml;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
+import org.springframework.boot.http.converter.autoconfigure.HttpMessageConverters;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
