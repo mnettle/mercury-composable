@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://accenture.github.io/mercury-composable/guides/code-conventions/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Code Conventions - Composable for Java</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Code Conventions";
+        var mkdocs_page_input_path = "guides/code-conventions.md";
+        var mkdocs_page_url = "/mercury-composable/guides/code-conventions/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Composable for Java
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Orientation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Foundations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture/">Architecture Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../methodology/">Methodology</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ai-developer-guide/">AI Developer Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Layer 1 — Event-driven</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-driven/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-driven/write-your-first-function/">Write your first function</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-driven/function-execution/">Function Execution Strategies</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-driven/ai-agent-guide/">Function AI agent guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rest-automation/">REST Automation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rest-automation/rest-grammar/">REST grammar</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rest-automation/ai-agent-guide/">REST AI agent guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Layer 2 — Composable</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-script/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-script/syntax/">Event Script Syntax</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-script/flow-grammar/">Flow grammar</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-script/ai-agent-guide/">Flow AI agent guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../flow-schema-reference/">Flow Configuration Schema</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Layer 3 — Knowledge Graph</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/build-your-first-graph/">Build your first graph</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/skills-reference/">Built-in skills reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/command-reference/">MiniGraph command grammar</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/ai-agent-guide/">AI agent guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/composing-the-layers/">Composing the layers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/playground-and-companion/">Playground & AI companion</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/property-graph/">Minimalist Property Graph</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operate & integrate</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../build-test-deploy/">Build, Test & Deploy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../observability/">Observability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../spring-boot/">Spring Boot Integration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-over-http/">Event over HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../kafka-flow-adapter/">Kafka Flow Adapter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../schema-registry-mock/">Schema Registry Mock</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sync-over-async/">Sync-over-Async</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../service-mesh/">Minimalist Service Mesh</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../arch-decisions/ADR/">Architectural Decision Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api-overview/">API Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../annotations-reference/">Annotations Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration-reference/">Configuration Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-envelope-reference/">Event Envelope Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../reserved-names-and-headers/">Reserved Names & Headers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../actuators-and-http-client/">Actuators & HTTP Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/Accenture/mercury-composable/blob/main/CHANGELOG.md">Release Notes</a>
+                  </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Code Conventions</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#altitude-where-this-fits">Altitude — where this fits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#package-organization">Package organization</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#route-naming">Route naming</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function-granularity">Function granularity</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#see-also">See also</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../documentation-conventions/">Documentation Conventions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://github.com/Accenture/mercury-composable/blob/main/CONTRIBUTING.md">Contributing</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://github.com/Accenture/mercury-composable/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://github.com/Accenture/mercury-composable/blob/main/INCLUSIVITY.md">Inclusivity</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Composable for Java</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Code Conventions</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="code-conventions">Code Conventions</h1>
+<p><em>Reference: Recommended conventions for organizing and naming Mercury application code.</em></p>
+<blockquote>
+<p><strong>At a glance</strong></p>
+<ul>
+<li><strong>What</strong> — soft, evolving recommendations for how to organize and name code in a composable
+  application: package layout, route naming, function granularity.</li>
+<li><strong>Why it matters</strong> — composable apps are many small functions wired by route names; a little naming
+  and layout discipline keeps the whole readable and keeps route collisions out.</li>
+<li><strong>For</strong> developers and AI agents writing functions, flows, and the classes around them.</li>
+</ul>
+</blockquote>
+<h2 id="altitude-where-this-fits">Altitude — where this fits</h2>
+<p>These are <strong>recommendations</strong>, not hard rules. They sit below the two harder tiers:</p>
+<ul>
+<li><strong><a href="../../arch-decisions/ADR/">Architectural Decision Records</a></strong> — durable architecture <em>decisions</em> with
+  rationale (the <em>why</em>); changing one is a governed event.</li>
+<li><strong><a href="../methodology/">Methodology</a></strong> — the four composable design <em>principles</em> (the philosophy).</li>
+<li><strong>Code conventions (this page)</strong> — evolving "how we organize and name code." Add here when a practice is
+  worth sharing but is a matter of readability or team convention rather than a binding decision.</li>
+</ul>
+<p>If a guideline turns out to be load-bearing (breaking it breaks the system), promote it to an ADR instead.</p>
+<h2 id="package-organization">Package organization</h2>
+<p>Group classes by their <strong>role in the composable model</strong>, not by technical type:</p>
+<ul>
+<li><strong>Flow-task functions</strong> — functions that exist to be wired as Event Script tasks (a flow's <code>process:</code>
+  steps) go in a <strong><code>tasks</code> package</strong> (e.g. <code>org.platformlambda.tasks</code>). Collecting them in one place makes
+  the set of "things a flow can call" obvious at a glance and separates them from runtime plumbing. The
+  <code>sync-over-async</code> extension follows this: <code>SyncPrepareTask</code> and <code>SyncAwaitTask</code> (the <code>sync.prepare</code> /
+  <code>sync.await</code> facade tasks) live under <code>tasks</code>, while the return-route coordinator and its helpers stay in
+  the feature package.</li>
+<li><strong>Runtime / engine classes</strong> — coordinators, stores, autoloaders, and other plumbing stay in the
+  <strong>feature package</strong> (e.g. <code>org.platformlambda.sync</code>), not under <code>tasks</code>.</li>
+<li><strong>Configuration holders</strong> — config readers and constants go in a <strong><code>support</code></strong> (or <code>config</code>) package.</li>
+</ul>
+<p>This is a readability convention; the framework does not require it — <code>@PreLoad</code> discovery scans the
+configured <code>web.component.scan</code> base regardless of sub-package, so a function registers wherever it lives.</p>
+<h2 id="route-naming">Route naming</h2>
+<p>A function's <strong>route name is its whole contract</strong> with every flow that calls it (see
+<a href="../../arch-decisions/ADR/">ADR-0001</a> and <a href="../../arch-decisions/ADR/">ADR-0005 — one atom, four roles</a>),
+so name with care:</p>
+<ul>
+<li>Use <strong>lowercase dotted</strong> names: <code>v1.get.profile</code>, <code>sync.prepare</code>, <code>system.of.record</code>.</li>
+<li>Prefer a <strong>stable, intent-revealing</strong> name over an implementation detail — flows reference the string,
+  so renaming a route is a breaking change to every flow that uses it.</li>
+<li><strong>Do not overload a reserved route.</strong> Library and extension functions register their own routes; see
+  <a href="../reserved-names-and-headers/">Reserved Names &amp; Headers</a> for the do-not-collide list (which includes
+  the shipped <code>sync.prepare</code> / <code>sync.await</code> / <code>simple.kafka.notification</code> routes).</li>
+</ul>
+<h2 id="function-granularity">Function granularity</h2>
+<ul>
+<li>Keep a function a <strong>single unit of work</strong> (input → process → output). Sequencing, branching, and
+  failure handling are <strong>orchestration</strong> and belong in the Event Script flow, not inside the function
+  (see <a href="../../arch-decisions/ADR/">ADR-0007</a>).</li>
+<li>Reserve in-function logic for what a flat task chain genuinely cannot express — e.g. a synchronous
+  blocking rendezvous that must wrap an asynchronous call.</li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../../arch-decisions/ADR/">Architectural Decision Records</a> — the durable decisions these conventions realize.</li>
+<li><a href="../methodology/">Methodology</a> — the four composable design principles.</li>
+<li><a href="../reserved-names-and-headers/">Reserved Names &amp; Headers</a> — routes and headers not to overload.</li>
+<li><a href="../event-driven/ai-agent-guide/">Function AI agent guide</a> — the <code>@PreLoad</code> + <code>TypedLambdaFunction</code> contract.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../actuators-and-http-client/" class="btn btn-neutral float-left" title="Actuators & HTTP Client"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../documentation-conventions/" class="btn btn-neutral float-right" title="Documentation Conventions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../actuators-and-http-client/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../documentation-conventions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

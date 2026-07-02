@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://accenture.github.io/mercury-composable/guides/sync-over-async/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Sync-over-Async - Composable for Java</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sync-over-Async";
+        var mkdocs_page_input_path = "guides/sync-over-async.md";
+        var mkdocs_page_url = "/mercury-composable/guides/sync-over-async/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Composable for Java
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Orientation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Foundations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture/">Architecture Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../methodology/">Methodology</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ai-developer-guide/">AI Developer Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Layer 1 — Event-driven</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-driven/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-driven/write-your-first-function/">Write your first function</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-driven/function-execution/">Function Execution Strategies</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-driven/ai-agent-guide/">Function AI agent guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rest-automation/">REST Automation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rest-automation/rest-grammar/">REST grammar</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rest-automation/ai-agent-guide/">REST AI agent guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Layer 2 — Composable</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-script/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-script/syntax/">Event Script Syntax</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-script/flow-grammar/">Flow grammar</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-script/ai-agent-guide/">Flow AI agent guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../flow-schema-reference/">Flow Configuration Schema</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Layer 3 — Knowledge Graph</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/build-your-first-graph/">Build your first graph</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/skills-reference/">Built-in skills reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/command-reference/">MiniGraph command grammar</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/ai-agent-guide/">AI agent guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/composing-the-layers/">Composing the layers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/playground-and-companion/">Playground & AI companion</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../knowledge-graph/property-graph/">Minimalist Property Graph</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operate & integrate</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../build-test-deploy/">Build, Test & Deploy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../observability/">Observability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../spring-boot/">Spring Boot Integration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-over-http/">Event over HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../kafka-flow-adapter/">Kafka Flow Adapter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../schema-registry-mock/">Schema Registry Mock</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Sync-over-Async</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pattern">The pattern</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#config">Enabling and configuring</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reliability">Reliability cornerstones</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#when">When to use it</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#see-also">See also</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../service-mesh/">Minimalist Service Mesh</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../arch-decisions/ADR/">Architectural Decision Records</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../api-overview/">API Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../annotations-reference/">Annotations Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration-reference/">Configuration Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../event-envelope-reference/">Event Envelope Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../reserved-names-and-headers/">Reserved Names & Headers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../actuators-and-http-client/">Actuators & HTTP Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://github.com/Accenture/mercury-composable/blob/main/CHANGELOG.md">Release Notes</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code-conventions/">Code Conventions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../documentation-conventions/">Documentation Conventions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://github.com/Accenture/mercury-composable/blob/main/CONTRIBUTING.md">Contributing</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://github.com/Accenture/mercury-composable/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://github.com/Accenture/mercury-composable/blob/main/INCLUSIVITY.md">Inclusivity</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Composable for Java</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Operate & integrate</li>
+      <li class="breadcrumb-item active">Sync-over-Async</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sync-over-async">Sync-over-Async</h1>
+<p><em>Guide: turn an asynchronous Kafka backend into a synchronous REST request/response across pods, with a
+Redis return route.</em></p>
+<blockquote>
+<p><strong>At a glance</strong></p>
+<ul>
+<li><strong>What</strong> — a caller makes a normal synchronous REST call; behind it the request travels over Kafka to an
+  asynchronous backend (possibly on another pod) and the response is routed back through <strong>Redis</strong> to the
+  exact pod holding the open HTTP connection.</li>
+<li><strong>How</strong> — a <strong>correlation-id</strong> is the return-path key. The originating pod registers a return route in
+  Redis and blocks; the responder stores the response in Redis and wakes the originator via Pub/Sub.</li>
+<li><strong>Advanced &amp; opt-in</strong> — a distributed pattern for specific use cases; off by default (it eagerly connects
+  to Redis). Cf. the <a href="../service-mesh/">service mesh</a> — this is a deliberately lighter, Redis-based return path.</li>
+<li><strong>For</strong> developers exposing a cloud-native synchronous facade over an event-driven backend.</li>
+</ul>
+</blockquote>
+<p>In a cloud-native deployment the REST caller and the backend that answers may be different pods, and the
+backend is reached <strong>asynchronously</strong> over Kafka. Sync-over-async bridges that gap: the HTTP thread waits
+while the request fans out over Kafka and the answer is routed back — without coupling the two pods beyond a
+shared Redis and topic pair. It builds on the <a href="../kafka-flow-adapter/">Kafka Flow Adapter</a> for the Kafka legs.</p>
+<blockquote>
+<p><strong>Opt-in.</strong> The return-route coordinator eagerly connects to Redis, so it starts only when
+<code>sync.over.async.enabled=true</code>. Leave it off unless you are using the pattern.</p>
+</blockquote>
+<h2 id="pattern">The pattern</h2>
+<pre><code class="language-text">REST (sync) → service on POD-1
+  → register return route in Redis (key = correlation-id) + publish request to Kafka
+      → backend service on POD-2 (async) processes, publishes response to Kafka
+        → POD-1's reply consumer stores the response in Redis + wakes POD-1 (Pub/Sub)
+          → POD-1's blocked HTTP thread returns the response (or 408 on timeout)
+</code></pre>
+<p>The correlation-id threads the whole round trip. Redis holds two short-lived keys per request: the <strong>route</strong>
+(which pod's channel to wake) and the <strong>response</strong> payload.</p>
+<h2 id="config">Enabling and configuring</h2>
+<pre><code class="language-properties">sync.over.async.enabled=true
+redis.host=${REDIS_HOST:127.0.0.1}
+redis.port=${REDIS_PORT:6379}
+redis.password=${REDIS_PASSWORD:}     # blank = no auth; keep secrets in the environment
+</code></pre>
+<p>On startup the extension builds a Redis client and the return-route coordinator, keyed by this pod's origin
+id, from discrete <code>redis.*</code> connection parameters and <code>sync.*</code> engine tunables. See the
+<a href="../configuration-reference/#sync-over-async">Configuration Reference</a> for the full list; the essentials:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sync.over.async.enabled</code></td>
+<td><code>false</code></td>
+<td>Master switch; <code>true</code> starts the return-route coordinator.</td>
+</tr>
+<tr>
+<td><code>redis.host</code> / <code>redis.port</code></td>
+<td><code>127.0.0.1</code> / <code>6379</code></td>
+<td>Redis connection.</td>
+</tr>
+<tr>
+<td><code>redis.password</code></td>
+<td>— (blank)</td>
+<td>Auth password; source from the environment.</td>
+</tr>
+<tr>
+<td><code>redis.ssl</code></td>
+<td><code>false</code></td>
+<td>Use TLS (<code>rediss://</code>).</td>
+</tr>
+<tr>
+<td><code>redis.database</code></td>
+<td><code>0</code></td>
+<td>Logical database index.</td>
+</tr>
+<tr>
+<td><code>redis.timeout.ms</code></td>
+<td><code>5000</code></td>
+<td>Default command timeout.</td>
+</tr>
+<tr>
+<td><code>sync.return.channel.prefix</code></td>
+<td><code>svc-return</code></td>
+<td>Prefix for the per-pod Pub/Sub return channel.</td>
+</tr>
+<tr>
+<td><code>sync.route.ttl.seconds</code></td>
+<td><code>90</code></td>
+<td>TTL for the return-route key (cover the REST timeout + buffer).</td>
+</tr>
+<tr>
+<td><code>sync.response.ttl.seconds</code></td>
+<td><code>30</code></td>
+<td>TTL for the response key (short rendezvous window).</td>
+</tr>
+<tr>
+<td><code>sync.max.pending.requests</code></td>
+<td><code>10000</code></td>
+<td>Per-pod ceiling on in-flight synchronous requests (backpressure).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reliability">Reliability cornerstones</h2>
+<p>The design is correct independent of Pub/Sub timing:</p>
+<ul>
+<li><strong>Redis is the source of truth.</strong> The responder writes the response to Redis (<code>SETEX</code>) <strong>before</strong> sending
+  the Pub/Sub wake-up, so a signal can never arrive before the data.</li>
+<li><strong>Final read before timeout.</strong> If the wake-up is missed, the waiting pod does one last Redis read before
+  giving up — so a dropped notification still resolves the request rather than failing it.</li>
+<li><strong>Exactly-once completion.</strong> The pending-request registry completes each waiting future once, whichever of
+  the wake-up path and the timeout path wins; duplicates and orphans are no-ops.</li>
+<li><strong>Bounded growth.</strong> <code>sync.max.pending.requests</code> caps in-flight requests to protect a pod under load.</li>
+<li><strong>Timeout → 408.</strong> A request with no answer in its budget returns HTTP 408, and its Redis keys are cleaned
+  up (TTLs are the safety net for crashes).</li>
+</ul>
+<h2 id="when">When to use it</h2>
+<p>Reach for sync-over-async when you need a <strong>synchronous REST facade over an asynchronous, cross-pod backend</strong>
+and want a lightweight Redis return path rather than the full Kafka <a href="../service-mesh/">service mesh</a> with
+presence discovery. Like the mesh, it is an advanced opt-in: if your application does not need cross-pod
+synchronous request/response, design it cloud-native and skip this. The Kafka legs use the
+<a href="../kafka-flow-adapter/">Kafka Flow Adapter</a>; the synchronous facade itself is an ordinary composable function
+behind <code>rest.yaml</code>.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../kafka-flow-adapter/">Kafka Flow Adapter</a> — the inbound/outbound Kafka building blocks this pattern uses.</li>
+<li><a href="../configuration-reference/#sync-over-async">Configuration Reference</a> — every <code>redis.*</code> / <code>sync.*</code> key.</li>
+<li><a href="../service-mesh/">Minimalist Service Mesh</a> — the heavier <code>cloud.connector=kafka</code> alternative with service discovery.</li>
+<li><a href="../observability/">Observability</a> — tracing the round trip end-to-end.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../schema-registry-mock/" class="btn btn-neutral float-left" title="Schema Registry Mock"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../service-mesh/" class="btn btn-neutral float-right" title="Minimalist Service Mesh">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../schema-registry-mock/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../service-mesh/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
